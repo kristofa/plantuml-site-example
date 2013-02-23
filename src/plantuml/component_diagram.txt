@@ -1,0 +1,21 @@
+@startuml
+
+skinparam componentStyle uml2
+
+database "Postgres" {
+    [Database] 
+}
+
+node "Tomcat" {
+interface "Html/Javascript" as HTML
+interface "Http/REST" as REST
+
+[WebClient] -left- HTML
+[Server] -right- REST
+[Server] -down- JDBC
+[WebClient] --> REST
+JDBC --> [Database]
+}
+
+
+@enduml
