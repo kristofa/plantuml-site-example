@@ -21,6 +21,16 @@
     <url>git@github.com:kristofa/plantuml-site-example.git</url>
     <developerConnection>scm:git:git@github.com:kristofa/plantuml-site-example.git</developerConnection>
   </scm>
+  <distributionManagement>
+		<site>
+			<id>site</id>
+			<!-- Obviously deploying the site will not work with this url... 
+			     dav: indicates WebDav protocol. That's also why wagon-webdav-jackrabbit
+			     plugin is added as dependency of maven-site-plugin below...
+			-->			
+			<url>dav:http://invalidurl.com/${project.artifactId}/${project.version}</url>
+		</site>
+  </distributionManagement>
   <developers>
     <developer>
       <id>kristofa</id>
